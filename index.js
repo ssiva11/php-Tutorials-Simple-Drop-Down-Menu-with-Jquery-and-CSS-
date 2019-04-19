@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+//import './index.css';
+//import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import Dropdown from './dropdownmenu/Dropdown';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
+//ReactDOM.render(<App />, document.getElementById('root'));
 
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+var displayDropdown = (
+      <div style={{display: 'flex', justifyContent: 'left'}} >
+        <Dropdown />
       </div>
-    );
-  }
-}
+      );
 
-render(<App />, document.getElementById('root'));
+ReactDOM.render(displayDropdown, document.getElementById('root'));
+
+registerServiceWorker();
